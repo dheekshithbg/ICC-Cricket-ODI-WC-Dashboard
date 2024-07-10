@@ -40,14 +40,14 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
                 secondTeam=matchInput.getTeam2();
                 firstRuns=matchInput.getTeamruns1();
                 secondRuns=matchInput.getTeamruns2();
-                firstWkts=matchInput.getTeamruns1();
-                secondWkts=matchInput.getTeamruns2();
+                firstWkts=matchInput.getTeamwkts1();
+                secondWkts=matchInput.getTeamwkts2();
             }else{
                 secondTeam=matchInput.getTeam1();
                 firstRuns=matchInput.getTeamruns2();
                 secondRuns=matchInput.getTeamruns1();
-                firstWkts=matchInput.getTeamruns2();
-                secondWkts=matchInput.getTeamruns1();
+                firstWkts=matchInput.getTeamwkts2();
+                secondWkts=matchInput.getTeamwkts1();
             }
 
         }else{
@@ -56,14 +56,14 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
                 firstTeam=matchInput.getTeam2();
                 firstRuns=matchInput.getTeamruns2();
                 secondRuns=matchInput.getTeamruns1();
-                firstWkts=matchInput.getTeamruns2();
-                secondWkts=matchInput.getTeamruns1();
+                firstWkts=matchInput.getTeamwkts2();
+                secondWkts=matchInput.getTeamwkts1();
             }else{
                 firstTeam=matchInput.getTeam1();
                 firstRuns=matchInput.getTeamruns1();
                 secondRuns=matchInput.getTeamruns2();
-                firstWkts=matchInput.getTeamruns1();
-                secondWkts=matchInput.getTeamruns2();
+                firstWkts=matchInput.getTeamwkts1();
+                secondWkts=matchInput.getTeamwkts2();
             }
         }
 
