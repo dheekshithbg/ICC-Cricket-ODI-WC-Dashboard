@@ -25,13 +25,17 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
         match.setCity(matchInput.getCity());
         match.setVenue(matchInput.getVenue());
         match.setDate(LocalDate.parse(matchInput.getDate()));
-
+        match.setSeriesname(matchInput.getSeriesname());
+        
         String firstTeam; 
         String secondTeam;
         String firstRuns;
         String secondRuns;
         String firstWkts;
         String secondWkts;
+        String firstCap;
+        String secondCap;
+        
         
         if("bat".equals(matchInput.getToss_choice())){
             firstTeam=matchInput.getToss_winner();
@@ -42,12 +46,16 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
                 secondRuns=matchInput.getTeamruns2();
                 firstWkts=matchInput.getTeamwkts1();
                 secondWkts=matchInput.getTeamwkts2();
+                firstCap=matchInput.getTeamcap1();
+                secondCap=matchInput.getTeamcap2();
             }else{
                 secondTeam=matchInput.getTeam1();
                 firstRuns=matchInput.getTeamruns2();
                 secondRuns=matchInput.getTeamruns1();
                 firstWkts=matchInput.getTeamwkts2();
                 secondWkts=matchInput.getTeamwkts1();
+                firstCap=matchInput.getTeamcap2();
+                secondCap=matchInput.getTeamcap1();
             }
 
         }else{
@@ -58,15 +66,21 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
                 secondRuns=matchInput.getTeamruns1();
                 firstWkts=matchInput.getTeamwkts2();
                 secondWkts=matchInput.getTeamwkts1();
+                firstCap=matchInput.getTeamcap2();
+                secondCap=matchInput.getTeamcap1();
             }else{
                 firstTeam=matchInput.getTeam1();
                 firstRuns=matchInput.getTeamruns1();
                 secondRuns=matchInput.getTeamruns2();
                 firstWkts=matchInput.getTeamwkts1();
                 secondWkts=matchInput.getTeamwkts2();
+                firstCap=matchInput.getTeamcap1();
+                secondCap=matchInput.getTeamcap2();
             }
         }
 
+        match.setTeamcap1(firstCap);
+        match.setTeamcap2(secondCap);
         match.setTeam1(firstTeam);
         match.setTeam2(secondTeam);
         match.setTeamruns1(firstRuns);

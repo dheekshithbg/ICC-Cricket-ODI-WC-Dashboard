@@ -32,10 +32,8 @@ export const TeamPage = () => {
                     {team.teamName}
                 </span>{" "}
             </h1>
-            <h2>Latest Match</h2>
-            <h4>Match Details</h4>
+            <h2 className='subhead-text mt-5'>Latest Matches</h2>
             <MatchDetailCard teamName={team.teamName} match={team.matches && team.matches[0]} />
-            <h2>Recent Matches</h2>
             {team.matches && team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} match={match} />)}
         </section>
     );

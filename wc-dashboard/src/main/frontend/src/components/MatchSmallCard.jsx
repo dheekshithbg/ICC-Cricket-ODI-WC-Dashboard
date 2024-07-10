@@ -7,14 +7,13 @@ export const MatchSmallCard = ({ teamName, match }) => {
   const otherTeamRoute = `/teams/${otherTeam}`;
 
   return (
-    <div className="MatchSmallCard">
+    <div className="MatchSmallCard bg-white shadow-md rounded-lg p-4 mt-4">
       <p>
-        vs <Link to={otherTeamRoute}> {otherTeam}</Link>
+        vs <Link to={otherTeamRoute} className="text-blue-500">{otherTeam}</Link>
       </p>
       <p>{match.team1}: {match.teamruns1}/{match.teamwkts1}</p>
       <p>{match.team2}: {match.teamruns2}/{match.teamwkts2}</p>
       <p>{match.margin}</p>
-      <br />
     </div>
   );
 };
