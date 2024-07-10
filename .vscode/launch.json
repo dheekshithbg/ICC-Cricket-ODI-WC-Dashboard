@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-WcDashboardApplication<wc-dashboard>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "io.project.wc_dashboard.WcDashboardApplication",
+            "projectName": "wc-dashboard",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
