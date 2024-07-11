@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export const MatchDetailCard = ({ teamName, match }) => {
   if (!match) return null;
 
-  // Function to reverse the date format from yyyy-mm-dd to dd-mm-yyyy
   const reverseDate = (dateString) => {
     const parts = dateString.split('-');
     if (parts.length === 3) {
@@ -14,16 +13,17 @@ export const MatchDetailCard = ({ teamName, match }) => {
     }
   };
 
-  // Determine the opposing team and its route
-  const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
+  const normalizedTeamName = teamName === "india" ? "India" : teamName;
+  const otherTeam = match.team1 === normalizedTeamName ? match.team2 : match.team1;
   const otherTeamRoute = `/teams/${otherTeam}`;
+  const isWinner = normalizedTeamName === match.winner;
 
   return (
-    <div className="MatchDetailCard bg-white shadow-lg rounded-lg p-6 mt-5">
+    <div className={`MatchDetailCard shadow-lg rounded-lg p-6 mt-5`} data-color={isWinner ? 'green' : 'red'}>
       <div className="mb-4">
         <h2 className="text-lg font-bold">Teams:</h2>
         <p className="text-lg">
-          {match.team1} vs <Link to={otherTeamRoute} className="text-blue-500">{otherTeam}</Link>
+          {normalizedTeamName} vs <Link to={otherTeamRoute} className="text-blue-500">{otherTeam}</Link>
         </p>
       </div>
       <div className="mb-4">

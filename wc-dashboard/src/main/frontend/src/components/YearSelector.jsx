@@ -1,32 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-// export const YearSelector = ({ teamName }) => {
-//   let years = [];
-//   const startYear = parseInt(process.env.REACT_APP_DATA_START_YEAR, 10);
-//   const endYear = parseInt(process.env.REACT_APP_DATA_END_YEAR, 10);
-
-//   for (let i = startYear; i <= endYear; i++) {
-//     years.push(i);
-//   }
-
-//   return (
-//     <ol className="text-right list-none">
-//       {years.map(year => (
-//         <li key={year} className="my-2">
-//           <Link to={`/teams/${teamName}/matches/${year}`}>{year}</Link>
-//         </li>
-//       ))}
-//     </ol>
-//   );
-// };
-
-function YearSelector(){
+export const YearSelector = ({ teamName, selectedYear }) => {
+    let years = [2023, 2019, 2015, 2011, 2007, 2003, 1999, 1996, 1992, 1987, 1983, 1979, 1975];
+    
     return (
         <div>
-            <p>Hello year</p>
+            {years.map(year => (
+                <li key={year} className={year === selectedYear ? 'font-bold text-blue-500' : ''}>
+                    <Link to={`/teams/${teamName}/matches/${year}`}>{year}</Link>
+                </li>
+            ))}
         </div>
     );
-}
-
-export default YearSelector;
+};

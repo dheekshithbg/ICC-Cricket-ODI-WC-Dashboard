@@ -32,6 +32,10 @@ body:has(.card[data-color="green"]:hover) {
   .MatchDetailCard {
     @apply bg-white border rounded-lg shadow-lg p-8 mb-8 mx-auto max-w-4xl grid grid-cols-3 ;
   }
+  .pie-chart-container:hover {
+    transform: scale(1.05); /* Slight zoom out */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
   .head-text {
     @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
   }
