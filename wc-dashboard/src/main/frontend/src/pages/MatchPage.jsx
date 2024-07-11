@@ -33,7 +33,7 @@ export const MatchPage = () => {
                 </ul>
             </div>
             
-            <div className="col-span-5 flex flex-col items-center space-y-4">
+            <div className="col-span-5 flex flex-col items-center space-y-4 mb-14">
                 <h1 className="text-2xl font-bold mb-4">{normalizedTeamName}</h1>
                 {matches.map(match => (
                     <MatchDetailCard key={match.id} teamName={teamName} match={match} />

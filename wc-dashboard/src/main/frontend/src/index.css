@@ -28,10 +28,16 @@ body:has(.card[data-color="green"]:hover) {
 @layer utilities {
   .max-container {
     @apply max-w-screen-xl mx-auto sm:p-8 pb-6 !pt-[64px] px-4 min-h-[calc(100vh-40px)];
-  }  
-  .MatchDetailCard {
-    @apply bg-white border rounded-lg shadow-lg p-8 mb-8 mx-auto max-w-4xl grid grid-cols-3 ;
   }
+  .home-container {
+    @apply max-w-screen-xl mx-auto sm:p-8 pb-6 !pt-[28px] px-4 min-h-[calc(100vh-40px)] flex justify-center;
+  }  
+  .MatchDetailWinCard {
+    @apply bg-white border-r-4 border-green-500 rounded-lg shadow-lg p-6 mb-8 mx-auto max-w-4xl grid grid-cols-3 gap-x-8 mt-5;
+  }
+  .MatchDetailLossCard {
+    @apply bg-white border-r-4 border-red-500 rounded-lg shadow-lg p-6 mb-8 mx-auto max-w-4xl grid grid-cols-3 gap-x-8 mt-5;
+  }    
   .pie-chart-container:hover {
     transform: scale(1.05); /* Slight zoom out */
     transition: transform 0.3s ease-in-out; /* Smooth transition */

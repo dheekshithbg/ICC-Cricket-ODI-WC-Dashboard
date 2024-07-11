@@ -32,7 +32,7 @@ export const TeamPage = () => {
     }, [teamName]);
 
     if (!team || !team.teamName) {
-        return <div>Team not found</div>;
+        return <div>Loading...</div>;
     }
 
     const matchLosses = team.totalMatches - matchWins;

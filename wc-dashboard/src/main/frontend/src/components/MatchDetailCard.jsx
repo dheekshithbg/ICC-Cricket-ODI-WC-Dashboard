@@ -16,12 +16,12 @@ export const MatchDetailCard = ({ teamName, match }) => {
   const normalizedTeamName = teamName === "india" ? "India" : teamName;
   const otherTeam = match.team1 === normalizedTeamName ? match.team2 : match.team1;
   const otherTeamRoute = `/teams/${otherTeam}`;
-  const isWinner = normalizedTeamName === match.winner;
+  const isWinner = teamName === match.matchWinner;
 
   return (
-    <div className={`MatchDetailCard shadow-lg rounded-lg p-6 mt-5`} data-color={isWinner ? 'green' : 'red'}>
+    <div className={isWinner ? 'MatchDetailWinCard' : 'MatchDetailLossCard'}>
       <div className="mb-4">
-        <h2 className="text-lg font-bold">Teams:</h2>
+        <h2 className="text-lg font-bold">Teams: {isWinner}</h2>
         <p className="text-lg">
           {normalizedTeamName} vs <Link to={otherTeamRoute} className="text-blue-500">{otherTeam}</Link>
         </p>
