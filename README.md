@@ -29,10 +29,7 @@ This full-stack web application, built with Spring Boot, provides comprehensive 
 ### Prerequisites
 
 - Java 17
-- Node.js
 - AWS Account
-
-## Getting Started
 
 You can access the deployed application using the following link:
 
