@@ -6,7 +6,7 @@ export const HomePage = () => {
     return (
         <section className='home-container'>
             <div className='py-7 flex flex-col items-center'>
-                <h1 className='head-text text-center mb-8'>Cricket World Cup Dashboard</h1>
+                <h1 className='head-text text-center mb-8'>Cricket World Cup ODI Dashboard</h1>
                 <div className='mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-12 justify-center items-center'>
                     {teamInfo.map((team1) => (
                         <Link to={`/teams/${team1.name}`} key={team1.name}>

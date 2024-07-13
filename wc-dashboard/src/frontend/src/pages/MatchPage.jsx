@@ -13,7 +13,8 @@ export const MatchPage = () => {
 
     useEffect(() => {
         const fetchMatches = async () => {
-            const response = await fetch(`http://localhost:5127/team/${normalizedTeamName}/matches?year=${year}`);
+            const apiUrl = import.meta.env.VITE_API_ROOT_URL;
+            const response = await fetch(`${apiUrl}/team/${normalizedTeamName}/matches?year=${year}`);
             const data = await response.json();
             setMatches(data);
         };
@@ -25,16 +26,16 @@ export const MatchPage = () => {
     }
 
     return (
-        <div className="grid grid-cols-6 gap-8">
+        <div className="grid grid-cols-10 gap-8">
             <div className="col-span-1">
-                <h2 className="text-xl font-bold mb-2">Select Year</h2>
+                <h2 className="text-xl font-bold mb-2 mt-14">Select Year</h2>
                 <ul className="list-none">
                     <YearSelector teamName={teamName} selectedYear={parseInt(year)} />
                 </ul>
             </div>
             
-            <div className="col-span-5 flex flex-col items-center space-y-4 mb-14">
-                <h1 className="text-2xl font-bold mb-4">{normalizedTeamName}</h1>
+            <div className="col-span-9 flex flex-col items-center space-y-4 mb-14">
+                <h1 className="blue-gradient_text text-2xl font-bold mb-4 ">{normalizedTeamName}</h1>
                 {matches.map(match => (
                     <MatchDetailCard key={match.id} teamName={teamName} match={match} />
                 ))}
